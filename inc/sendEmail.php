@@ -1,4 +1,3 @@
-test
 <?php
     // My modifications to mailer script from:
     // http://blog.teamtreehouse.com/create-ajax-contact-form
@@ -6,11 +5,11 @@ test
     // Only process POST reqeusts.
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Get the form fields and remove whitespace.
-        $name = strip_tags(trim($_POST["contactName"]));
+        $name = strip_tags(trim($_POST["name"]));
 				$name = str_replace(array("\r","\n"),array(" "," "),$name);
-        $email = filter_var(trim($_POST["contactEmail"]), FILTER_SANITIZE_EMAIL);
+        $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
         // $cont_subject = trim($_POST["subject"]);
-        $message = trim($_POST["contactMessage"]);
+        $message = trim($_POST["message"]);
         // Check that data was sent to the mailer.
         if ( empty($name) OR empty($message) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
             // Set a 400 (bad request) response code and exit.
