@@ -612,13 +612,13 @@ input[type="checkbox"] { display: inline; }
 
 /* Change background color of buttons on hover */
 .tab button:hover {
-    color: #F06000;
+    color: red;
 }
 
 /* Create an active/current tablink class */
 .tab button.active {
-    background-color: #F06000;
-    color: #000;
+    background-color: red;
+    color: yellow;
 }
 
 /* Style the tab content */
