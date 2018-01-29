@@ -5,11 +5,11 @@
     // Only process POST reqeusts.
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Get the form fields and remove whitespace.
-        $name = strip_tags(trim($_POST["name"]));
+        $name = strip_tags(trim($_POST["contactName"]));
 				$name = str_replace(array("\r","\n"),array(" "," "),$name);
-        $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
+        $email = filter_var(trim($_POST["contactEmail"]), FILTER_SANITIZE_EMAIL);
         // $cont_subject = trim($_POST["subject"]);
-        $message = trim($_POST["message"]);
+        $message = trim($_POST["contactMessage"]);
         // Check that data was sent to the mailer.
         if ( empty($name) OR empty($message) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
             // Set a 400 (bad request) response code and exit.
@@ -19,7 +19,7 @@
         }
         // Set the recipient email address.
         // FIXME: Update this to your desired email address.
-        $recipient = "mail@matthieutripoli.com;
+        $recipient = "mail@christritt.com;
         // Set the email subject.
         $subject = "New contact from $name";
         // Build the email content.
